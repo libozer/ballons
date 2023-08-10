@@ -1,0 +1,125 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-size: 16 px
+    font-family: "Roboto"
+    color: #777777
+    font-weight: 400
+    letter-spacing: 2px
+    padding: 50px
+    background-color: white
+
+.container
+    color: #F7F7F7
+
+.header
+    position: relative
+    height: 95vh
+    background: url(../img/header-image.png) center / cover no-repeat
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    &__logo
+        top: 50px
+        left: 50px
+        position: absolute
+        height: 70px
+        width: 56px
+    &__box
+        top: 50%
+        left: 50%
+        position: absolute
+        text-align: center
+        transform: translate(-50%, -50%)
+        max-width: 970px
+        width: 100%
+
+.title-first
+    font-family: "Roboto"
+    &__main
+        display: block
+        color: #FFF
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        font-size: 50px
+        font-style: normal
+        font-weight: 800
+        line-height: normal
+        letter-spacing: 10px
+        margin-bottom: 10px
+        animation: rightToLeft
+        animation-duration: 4s
+    &__secondary
+        display: block
+        color: #FFF
+        font-size: 40px
+        font-style: normal
+        font-weight: 300
+        line-height: normal
+        letter-spacing: 5px
+        animation: leftToRight
+        animation-duration: 2s
+        margin-bottom: 65px
+
+.btn
+    &:visited,  &:link
+        color: var(--color-grey, #777)
+        font-size: 20px
+        font-weight: 600
+        letter-spacing: 5px
+        border-radius: 50px
+        background: #FFF
+        text-decoration: none
+        padding: 15px 40px
+        margin-bottom: 70px
+        display: inline-block
+        transition: all .2s
+        position: relative
+    &:hover
+        transform: translateY(-3px)
+        &::after
+            transform: scaleX(1.4) scaleY(1.8)
+            opacity: 0
+    &:active
+        transform: translateY(1px)
+    &::after
+        content: ""
+        color: var(--color-grey, #777)
+        background: #FFF
+        border-radius: 50px
+        text-decoration: none
+        width: 100%
+        height: 100%
+        display: inline-block
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        transition: all 0.7s
+    &_animated
+        animation: btnTop
+        animation-duration: 2s
+
+@keyframes btnTop
+    0%
+        opacity: 0
+        transform: translateY(100px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
+
+@keyframes rightToLeft
+    0%
+        opacity: 0
+        transform: translateX(-100px)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+@keyframes leftToRight
+    0%
+        opacity: 0
+        transform: translateX(100px)
+    100%
+        opacity: 1
+        transform: translateX(0)
